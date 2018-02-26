@@ -14,12 +14,13 @@ class LibraryList extends Component {
     }
 
     renderRow(library) {
-        return <ListItem library={library} />
+        return <ListItem library={library} />;
     }
 
     render() {
         return (
-            <ListView style={styles.listViewStyle}
+            <ListView
+            style={styles.listViewStyle}
                 dataSource={this.dataSource}
                 renderRow={this.renderRow}
             />
@@ -33,8 +34,6 @@ const styles = {
     }
 };
 
-const mapStateToProps = state => {
-    return { libraries: state.libraries };
-};
+const mapStateToProps = state => ({ libraries: state.libraries });
 
 export default connect(mapStateToProps)(LibraryList);
